@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    tools:context=".view.UserDataActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/user_data_back_btn"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_baseline_chevron_left_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/user_data_add_driver"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_baseline_person_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/info_user_data_logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:background="#30000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_back_btn" />
+
+
+        <View
+            android:id="@+id/user_data_v_separate"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="#D8D8D8"
+            app:layout_constraintTop_toBottomOf="@id/info_user_data_logo" />
+
+        <TextView
+            android:id="@+id/user_data_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:text="البريد الإلكتروني"
+            android:background="#30000000"
+            android:textColor="@color/white"
+         android:textDirection="rtl"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_v_separate" />
+
+        <TextView
+            android:id="@+id/user_data_school_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text=" الرقم التعريفى للمدرسة"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:textDirection="rtl"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_email" />
+
+        <TextView
+            android:id="@+id/user_data_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text="الإسم"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textDirection="rtl"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_school_id" />
+
+        <TextView
+            android:id="@+id/user_data_civil_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text="الرقم المدنى"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:textDirection="rtl"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_name" />
+
+        <TextView
+            android:id="@+id/user_data_father_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text="رقم الأب"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:textDirection="rtl"
+
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_civil_number" />
+
+        <TextView
+            android:id="@+id/user_data_mather_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text="رقم الأم"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:visibility="gone"
+            android:textDirection="rtl"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_father_phone" />
+
+        <TextView
+            android:id="@+id/user_data_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+            android:text="المرحلة الدراسية"
+            android:textColor="@color/white"
+            android:textDirection="rtl"
+
+            android:textSize="@dimen/_15ssp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_mather_phone" />
+
+        <TextView
+            android:id="@+id/user_data_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:drawableStart="@drawable/ic_open_location"
+            android:fontFamily="@font/ge_snd_book"
+            android:padding="@dimen/_5sdp"
+            android:background="#30000000"
+
+            android:text="العنوان"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:textDirection="rtl"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_data_level" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.authcycle.SignUpStudentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:fontFamily="@font/hacen_samra"
+            android:text="إنشاء حساب"
+            android:textColor="#070F3F"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/auth_signUpStudent_logo"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/auth_signUpStudent_logo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUp_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="البريد الإلكتروني"
+                android:inputType="textEmailAddress"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SignupStudent_school_id_out"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/school_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="الرقم التعريفى للمدرسة"
+                android:inputType="textEmailAddress"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SignupStudent_school_id_out">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUpStudent_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="الإسم"
+                android:inputType="textPersonName"
+                android:minHeight="@dimen/_35sdp"
+
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_civil_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUp_et_civil_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="الرقم المدنى"
+                android:inputType="textPersonName"
+                android:minHeight="@dimen/_35sdp"
+
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_father_phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_civil_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUp_et_father_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="رقم الأب"
+                android:inputType="number"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_mather_phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:visibility="visible"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_father_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUp_et_mather_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="رقم الأم"
+                android:inputType="number"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_level"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:visibility="visible"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_mather_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUp_et_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="المرحلة الدراسية"
+                android:inputType="textAutoCorrect"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_adress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:endIconDrawable="@drawable/add_location"
+            app:endIconMode="custom"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_level">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signUpStudent_et_adress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="اضغط لتحديد الموقع"
+                android:inputType="text"
+
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signUpStudent_out_et_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:hintTextAppearance="@style/MyHintStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_adress"
+            app:passwordToggleDrawable="@drawable/ic_show_password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupStudent_et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:hint="الرقم السرى"
+                android:inputType="textPassword"
+                android:layoutDirection="ltr"
+                android:minHeight="@dimen/_35sdp"
+                android:padding="@dimen/_5sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/signUpStudent_v_separate"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="#D8D8D8"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_out_et_password" />
+
+        <ImageView
+            android:id="@+id/signUpStudent_btn_signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpStudent_v_separate" />
+
+
+        <LinearLayout
+            android:id="@+id/Student_tv_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpStudent_btn_signUp">
+
+
+            <TextView
+                android:id="@+id/alreadyStudent_have_an_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:gravity="center_horizontal"
+                android:text="تسجيل دخول"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2sdp"
+                android:fontFamily="@font/ge_snd_bookk"
+                android:gravity="center_horizontal"
+                android:text="لدى حساب"
+                android:textSize="@dimen/_10ssp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

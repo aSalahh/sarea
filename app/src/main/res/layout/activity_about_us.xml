@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg"
+    tools:context=".view.AboutUsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/about_us_back_btn"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/ic_left_arrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"/>
+
+        <LinearLayout
+            android:id="@+id/linear_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about_us_back_btn">
+
+
+            <ImageView
+                android:id="@+id/sarea_logo"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/bus_station"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/hacen_samra"
+                android:text="ســـارع"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_40ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/login_v_separate"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="#D8D8D8"
+            app:layout_constraintTop_toBottomOf="@id/linear_logo" />
+
+        <LinearLayout
+            android:id="@+id/linear_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_v_separate">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/ge_snd_book"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="@dimen/_5sdp"
+                android:text="نظام سارع لتتبع حافلات المدارس ﺑﺸﻜﻞ ﻣﺒﺎﺷﺮ يساعدك فى معرفة ﻣﻮﻗﻊ اﻟﺤﺎﻓﻠﺔ ﻓﻲ أي وﻗﺖ أﺛﻨﺎء اﻟﺠﻮﻟﺔ اﻟﻤﺪرﺳﻴﺔ ."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.352" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="#D8D8D8"
+                app:layout_constraintTop_toBottomOf="@id/linear_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/ge_snd_book"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="@dimen/_5sdp"
+                android:text="نظام تتبع الحافلات ﻳﺠﻌﻞ إدارة اﻟﻤﺪرﺳﺔ والاﻫﺎﻟﻲ ﻳﺸﻌﺮان ﺑﺎﻣﺎن اكبر ﺑﻤﺎ ﻳﺨﺺ ﺳﻼﻣﺔ اﻟﻄﻼب حيث يركز تطبيقنا على سلامة وصول الطلاب من و الى المدرسة  ."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.352" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="#D8D8D8"
+                app:layout_constraintTop_toBottomOf="@id/linear_logo" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/ge_snd_book"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="@dimen/_5sdp"
+                android:text="نظام سارع يساعدك فى توفير الوقت والمجهود كما يساعد على متابعة سلوك السائقين و توفير استهلاك الوقود."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.352" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

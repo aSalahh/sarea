@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#3253A6"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        <RelativeLayout
+        android:layout_width="match_parent"
+            android:gravity="center_vertical"
+        android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bus_station" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_toEndOf="@+id/btn_back"
+                android:fontFamily="@font/hacen_samra"
+                android:text="ســـارع"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+
+
+            <ImageButton
+                android:id="@+id/btn_logout"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_1sdp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_logout" />
+    </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/school"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/_15sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignEnd="@+id/current_user_profile_img"
+                android:layout_alignParentBottom="true"
+                android:gravity="top|end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/current_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:padding="@dimen/_8sdp"
+                    android:text=""
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_2sdp"
+                    android:text="الرقم التعريقى للمدرسة"
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/current_school_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="#727AA8"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/current_user_profile_img"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+               />
+            <ProgressBar
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/home_progressbar"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/main_v_separate"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="#D8D8D8"
+        app:layout_constraintTop_toBottomOf="@id/school" />
+
+
+
+    <TextView
+        android:id="@+id/avilable_going_travels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/ge_snd_book"
+        android:padding="@dimen/_5sdp"
+        android:paddingStart="@dimen/_30sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:gravity="center_vertical"
+        android:background="@drawable/rounden_shape_black"
+        android:text="رحلات الذهاب المتاحة"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:textDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forschool" />
+
+<LinearLayout
+    android:id="@+id/forschool"
+
+    android:layout_width="match_parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:visibility="gone"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/main_v_separate"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/create_travel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_v_separate">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/slider_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/ge_snd_book"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_4sdp"
+                android:text=" إنشاء رحلة"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_15ssp" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/my_students"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_v_separate">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/slider_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/ge_snd_book"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_4sdp"
+                android:text=" طلاب المدرسة"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_15ssp" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avilable_going_travels"
+        android:id="@+id/recyclerView_avilable_going_travels"
+        app:layout_constraintBottom_toTopOf="@id/avilable_coming_travels"/>
+    <TextView
+        android:id="@+id/avilable_coming_travels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/ge_snd_book"
+        android:padding="@dimen/_5sdp"
+        android:paddingStart="@dimen/_30sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:gravity="center_vertical"
+        android:background="@drawable/rounden_shape_black"
+        android:text="رحلات العودة المتاحة"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:textDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_avilable_going_travels" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avilable_coming_travels"
+        android:id="@+id/recyclerView_avilable_coming_travels"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"/>
+    <TextView
+        android:id="@+id/no_going_travels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hacen_samra"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avilable_going_travels"
+        app:layout_constraintBottom_toTopOf="@id/avilable_coming_travels"
+        android:textSize="@dimen/_20sdp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="لا يوجد رحلات"/>
+    <TextView
+        android:id="@+id/no_coming_travels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hacen_samra"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avilable_coming_travels"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        android:textSize="@dimen/_20sdp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="لا يوجد رحلات"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3253A6"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/school"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_100sdp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_weight="1"
+    app:cardCornerRadius="@dimen/_15sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg1">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="-1dp"
+            android:gravity="top|end"
+            android:weightSum="5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/current_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/ge_snd_book"
+                android:maxLines="1"
+                android:padding="@dimen/_8sdp"
+                android:text=" "
+                android:textColor="#050D3C"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/ge_snd_book"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+
+                android:text=" "
+                android:textColor="#050D3C"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/ic_inbus"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:visibility="visible"
+                android:src="@drawable/out_bus"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_user_profile_img"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="13dp" />
+
+        <ProgressBar
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/student_progressbar"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+

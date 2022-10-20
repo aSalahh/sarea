@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".view.TravelSettingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg2">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/setting_toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="#3253A6"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/setting_btn_back"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <TextView
+                    android:id="@+id/setting_txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_toEndOf="@+id/setting_btn_back"
+                    android:fontFamily="@font/hacen_samra"
+                    android:gravity="center_vertical"
+                    android:text="إنشاء رحلة"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/daypicker_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/travel_setting_set_time"            android:layout_centerHorizontal="true">
+
+            <include
+                android:id="@+id/daypicker"
+                layout="@layout/daypicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/daypicker_layout"
+            android:layout_centerHorizontal="true">
+
+            <RadioButton
+                android:id="@+id/checkBox_going"
+            android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+            android:text="ذهاب"
+                android:textColor="#050D3C"
+
+                android:fontFamily="@font/ge_snd_book"
+            android:textSize="@dimen/_15ssp" />
+            <RadioButton
+                android:id="@+id/checkBox_coming"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#050D3C"
+
+                android:layout_height="wrap_content"
+                android:text="عودة"
+                android:fontFamily="@font/ge_snd_book"
+                android:textSize="@dimen/_15ssp" />
+
+        </RadioGroup>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/travel_setting_set_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_choose_driver">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg1"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/tv_set_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:gravity="end"
+                    android:padding="@dimen/_4sdp"
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_4sdp"
+                    android:text="إضغط لتحديد وقت الرحلة : "
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/travel_setting_set_start_location"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/go_back">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg1"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="6">
+
+                <TextView
+                    android:id="@+id/btn_set_start_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corners"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_4sdp"
+                    android:text="تحديد"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="#FFF"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <EditText
+                    android:background="@android:color/transparent"
+                    android:id="@+id/et_set_start_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:gravity="end"
+                    android:padding="@dimen/_4sdp"
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_4sdp"
+                    android:text="من : "
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/travel_setting_set_end_location"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/travel_setting_set_start_location">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg1"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="6">
+                <TextView
+                    android:id="@+id/btn_set_end_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corners"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_4sdp"
+                    android:text="تحديد"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="#FFF"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:background="@android:color/transparent"
+                    android:id="@+id/et_set_end_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:gravity="end"
+                    android:padding="@dimen/_4sdp"
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:padding="@dimen/_4sdp"
+                    android:text="إلى : "
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:id="@+id/travel_setting_v_separate"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="#D8D8D8"
+            app:layout_constraintTop_toBottomOf="@id/travel_setting_set_end_location" />
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/choose_student"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_40sdp"-->
+<!--            android:layout_marginStart="@dimen/_15sdp"-->
+<!--            android:layout_marginTop="@dimen/_30sdp"-->
+<!--            android:layout_marginEnd="@dimen/_10sdp"-->
+<!--            android:layout_marginBottom="@dimen/_10sdp"-->
+<!--            app:cardCornerRadius="@dimen/_20sdp"-->
+
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/travel_setting_v_separate">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/bg1">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:fontFamily="@font/ge_snd_book"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:padding="@dimen/_4sdp"-->
+<!--                    android:text="إختيار الطلاب"-->
+<!--                    android:textColor="#050D3C"-->
+<!--                    android:textSize="@dimen/_15ssp" />-->
+
+<!--            </RelativeLayout>-->
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/choose_driver"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_4sdp"
+                    android:text="إختيار السائق"
+                    android:textColor="#050D3C"
+                    android:textSize="@dimen/_15ssp" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/first_choose_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/ge_snd_book"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="من قضلك إختر السائق أولاً "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_driver"
+            android:textColor="#636884"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_submit_travel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/travel_setting_v_separate">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/slider_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/ge_snd_book"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_4sdp"
+                    android:text="إنشاء"
+                    android:textColor="#FFF"
+                    android:textSize="@dimen/_15ssp" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit_travel"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/travel_setting_progressbar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

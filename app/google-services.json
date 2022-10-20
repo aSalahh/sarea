@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "143995683011",
+    "firebase_url": "https://sarea-1615b-default-rtdb.firebaseio.com",
+    "project_id": "sarea-1615b",
+    "storage_bucket": "sarea-1615b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143995683011:android:0cf7befe6f7d5918dfe276",
+        "android_client_info": {
+          "package_name": "com.qsilver.sarea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143995683011-81k8a0tbeh1e0ihd3cga9ve8du0id19f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qsilver.sarea",
+            "certificate_hash": "c1263895797ed8d005f7d676a3879b4eb60a68a4"
+          }
+        },
+        {
+          "client_id": "143995683011-5olombcrklubesijbrpmrmeu6dgsn6q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUIWecpiZC6n0n7ANivFf_TIju8W39cgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143995683011-5olombcrklubesijbrpmrmeu6dgsn6q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

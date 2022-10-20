@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.qsilver.sarea">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".model.MyFirbaseApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="سـارع"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Sarea"
+        tools:targetApi="31">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAkun6YUleO9_th-LnF_OlAqPydfolpBms" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".view.maps.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
+
+        </activity>
+        <activity
+            android:name=".view.SchoolStudentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.UserDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.authcycle.SignUpStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.DriversActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.StudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.TravelSettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.TravelsDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.authcycle.ForgetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".view.authcycle.SinUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.authcycle.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.WhichLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.splashcycle.SplashCycleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.splashcycle.Splash"
+            android:exported="true" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".view.maps.LocationService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

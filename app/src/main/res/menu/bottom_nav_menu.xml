@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="الإعدادات"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="الرئيسية"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/info"
+        android:enabled="true"
+        android:icon="@drawable/info"
+        android:title="عن التطبيق"
+        app:showAsAction="ifRoom" />
+</menu>
