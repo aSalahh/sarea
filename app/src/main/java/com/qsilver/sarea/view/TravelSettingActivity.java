@@ -40,6 +40,8 @@ import com.qsilver.sarea.model.UserLocation;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -196,14 +198,7 @@ public class TravelSettingActivity extends AppCompatActivity {
 
             }
         });
-        //   selectStudents=findViewById(R.id.choose_student);
-//        selectStudents.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i=new Intent(TravelSettingActivity.this,StudentActivity.class);
-//                startActivity(i);
-//            }
-//        });
+
 
 
         setTime.setOnClickListener(new View.OnClickListener() {
@@ -212,43 +207,39 @@ public class TravelSettingActivity extends AppCompatActivity {
                 popTimePicker();
             }
         });
-//        startLocation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            //    pickPointOnMap();
-//            }
-//        });
+
 
 
     }
 
 
 
-
+    public String deDup(String s) {
+        return new LinkedHashSet<String>(Arrays.asList(s.split("-"))).toString().replaceAll("(^\\[|\\]$)", "").replace(", ", "-");
+    }
     private void checkValidation() {
         if(tL.isChecked()){
-            markedButtons +="الخميس,";
+            markedButtons +="الخميس-";
         }
         if(tM.isChecked()){
-            markedButtons +="الأربعاء,";
+            markedButtons +="الأربعاء-";
         }
         if(tMi.isChecked()){
-            markedButtons +="الثلاثاء,";
+            markedButtons +="الثلاثاء-";
         }
         if(tJ.isChecked()){
-            markedButtons +="الإثنين,";
+            markedButtons +="الإثنين-";
         }
         if(tV.isChecked()){
-            markedButtons +="الأحد,";
+            markedButtons +="الأحد-";
         }
         if(tS.isChecked()){
-            markedButtons +="السبت";
+            markedButtons +="السبت-";
         }
         String time = myTime.getText().toString();
         int selectedId = travelType.getCheckedRadioButtonId();
         travelTypeRadioButton = (RadioButton) findViewById(selectedId);
         type=String.valueOf(travelTypeRadioButton.getText());
-
         if (time.equals("") || time.length() == 0||
                 type.equals("") || type.length() == 0||
                 markedButtons.equals("") || markedButtons.length() == 0||
@@ -256,14 +247,14 @@ public class TravelSettingActivity extends AppCompatActivity {
                 travelStartLat == 0.0 || travelStartLong == 0.0 ||
 
                selectDriver ==null ) {
-            Toast.makeText(TravelSettingActivity.this, "من فضلك إملئ جميع الحقول", Toast.LENGTH_LONG).show();
+            Toast.makeText(TravelSettingActivity.this, "من فضلك حدد أيام الرحلة", Toast.LENGTH_LONG).show();
         }  else if (!isNetworkAvailable(TravelSettingActivity.this)) {
             Toast.makeText(TravelSettingActivity.this, "من فضلك تأكد من الإتصال بالإنترنت", Toast.LENGTH_LONG).show();
 
         }
 
         else {
-            createTravel(selectedDriver,time,startUserLocation,endUserLocation,markedButtons,type);
+            createTravel(selectedDriver,time,startUserLocation,endUserLocation,deDup(markedButtons),type);
 
 
 

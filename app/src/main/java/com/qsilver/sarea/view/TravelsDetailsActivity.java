@@ -38,6 +38,7 @@ import com.qsilver.sarea.Adapter.usersAdapter;
 import com.qsilver.sarea.R;
 import com.qsilver.sarea.model.Travel;
 import com.qsilver.sarea.model.User;
+import com.qsilver.sarea.view.authcycle.SignUpStudentActivity;
 import com.qsilver.sarea.view.maps.MapsActivity;
 
 import java.io.File;
@@ -63,21 +64,19 @@ public class TravelsDetailsActivity extends AppCompatActivity {
     TextView level;
     TextView username;
     ImageView currentUserImg;
-
-    //////////////////////////
-    private DatabaseReference reference;
-    private FirebaseAuth mAuth;
     RecyclerView travelStudentsRecycler;
     List<User> travelStudentList;
     ImageButton travelsBtnBack;
     ImageButton openTravelOnMap;
-    private FirebaseStorage storage;
-    private StorageReference storageReference;
     CardView join;
     CardView desJoin;
-    CardView CurrentUser;
     LinearLayout linearLayout;
-  usersAdapter travelStudentsAdapter;
+    usersAdapter travelStudentsAdapter;
+    //////////////////////////
+    private DatabaseReference reference;
+    private FirebaseAuth mAuth;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,21 +85,19 @@ public class TravelsDetailsActivity extends AppCompatActivity {
         clickedTravel = (Travel) getIntent().getSerializableExtra("CLICK_TRAVEL");
         currentStudent = (User) getIntent().getSerializableExtra("CURRENT_STUDENT");
         driverImage = findViewById(R.id.driver_profile_img);
-        driverName = findViewById(R.id.driver_name);
-        driverAddress = findViewById(R.id.driver_address);
+        driverName = findViewById(R.id.travel_driver_name);
+        driverAddress = findViewById(R.id.travel_driver_address);
         openTravelOnMap = findViewById(R.id.open_travel_on_map);
         travelsBtnBack = findViewById(R.id.travels_btn_back);
-        driverPhone = findViewById(R.id.driver_phone);
+        driverPhone = findViewById(R.id.travel_driver_phone);
         travelFrom = findViewById(R.id.travel_from_set);
         travelTo = findViewById(R.id.travel_to_set);
         TravelTime = findViewById(R.id.travel_time_set);
-        detailsType=findViewById(R.id.details_type);
-        detailsDays=findViewById(R.id.details_days);
-        join=findViewById(R.id.join);
-
-        desJoin=findViewById(R.id.des_join);
-        linearLayout=findViewById(R.id.student_options);
-//        noStudentInThisTravel = findViewById(R.id.no_student_in_this_travel);
+        detailsType = findViewById(R.id.travel_details_type);
+        detailsDays = findViewById(R.id.travel_details_days);
+        join = findViewById(R.id.join);
+        desJoin = findViewById(R.id.des_join);
+        linearLayout = findViewById(R.id.student_options);
         travelStudentsRecycler = findViewById(R.id.recyclerView_travel_students);
         travelStudentsRecycler.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -110,28 +107,30 @@ public class TravelsDetailsActivity extends AppCompatActivity {
         travelStudentList = new ArrayList<User>();
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
-        getUserImage(clickedTravel.getDriver().getImageId());
-        driverName.setText(clickedTravel.getDriver().getName());
-        driverAddress.setText(clickedTravel.getDriver().getAddress());
-        detailsType.setText(clickedTravel.getType());
-        detailsDays.setText(clickedTravel.getTravelDays());
-        driverPhone.setText(clickedTravel.getDriver().getCivilNumber());
-        travelFrom.setText(clickedTravel.getTravelStartLocation().getAddress());
-        travelTo.setText(clickedTravel.getTravelEndLocation().getAddress());
-        TravelTime.setText(clickedTravel.getTime());
 
+        if (clickedTravel!=null){
+            getUserImage(clickedTravel.getDriver().getImageId());
+            driverName.setText(clickedTravel.getDriver().getName());
+            driverAddress.setText(clickedTravel.getDriver().getAddress());
+            detailsType.setText(clickedTravel.getType());
+            detailsDays.setText(clickedTravel.getTravelDays());
+            driverPhone.setText(clickedTravel.getDriver().getCivilNumber());
+            travelFrom.setText(clickedTravel.getTravelStartLocation().getAddress());
+            travelTo.setText(clickedTravel.getTravelEndLocation().getAddress());
+            TravelTime.setText(clickedTravel.getTime());
+            getAvailableStudentInThisTravel(clickedTravel);
 
-
-
-
-
-
-
-
-        if (LoadData(TravelsDetailsActivity.this,"USER_TYPE")!=null &&
-                LoadData(TravelsDetailsActivity.this,"USER_TYPE").equals("student")){
-            linearLayout.setVisibility(View.VISIBLE);
         }else {
+            Toast.makeText(TravelsDetailsActivity.this, "من فضلك تأكد من الإتصال بالإنترنت", Toast.LENGTH_LONG).show();
+
+        }
+
+
+
+        if (LoadData(TravelsDetailsActivity.this, "USER_TYPE") != null &&
+                LoadData(TravelsDetailsActivity.this, "USER_TYPE").equals("student")) {
+            linearLayout.setVisibility(View.VISIBLE);
+        } else {
             linearLayout.setVisibility(View.GONE);
         }
 
@@ -144,10 +143,10 @@ public class TravelsDetailsActivity extends AppCompatActivity {
         openTravelOnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(TravelsDetailsActivity.this, MapsActivity.class);
-                intent.putExtra("MAP_CLICK_DRIVER",clickedTravel);
-                intent.putExtra("MAP_CURRENT_STUDENT",currentStudent);
-                SaveData(TravelsDetailsActivity.this,"CLICKED_TRAVEL_TYPE",clickedTravel.getType());
+                Intent intent = new Intent(TravelsDetailsActivity.this, MapsActivity.class);
+                intent.putExtra("MAP_CLICK_DRIVER", clickedTravel);
+                intent.putExtra("MAP_CURRENT_STUDENT", currentStudent);
+                SaveData(TravelsDetailsActivity.this, "CLICKED_TRAVEL_TYPE", clickedTravel.getType());
 
                 startActivity(intent);
 
@@ -158,7 +157,7 @@ public class TravelsDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 addCurrentStudentToTravel(currentStudent);
 
-                        }
+            }
         });
         desJoin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,26 +167,25 @@ public class TravelsDetailsActivity extends AppCompatActivity {
             }
         });
 
-        getAvailableStudentInThisTravel(clickedTravel);
     }
 
     private void removeCurrentStudentFromTravel(User student) {
 
         reference = FirebaseDatabase.getInstance().getReference("TravelStudents").child(student.getId());
 
-                     reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                         @Override
-                         public void onComplete(@NonNull Task<Void> task) {
-                             Toast.makeText(TravelsDetailsActivity.this, "تم", Toast.LENGTH_LONG).show();
+        reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(TravelsDetailsActivity.this, "تم", Toast.LENGTH_LONG).show();
 
-                         }
-                     });
+            }
+        });
     }
 
     private void addCurrentStudentToTravel(User student) {
-        User currentStudent=new User(student.getEmail(),student.getCivilNumber(),student.getFatherPhone(),
-                student.getMatherPhone(),student.getLevel(),student.getName(),student.getAddress(),student.getId(),student.getType(),
-                student.getSchoolId(),student.getImageId(),clickedTravel.getTravelId(),student.getUserLocation(),false,clickedTravel.getType());
+        User currentStudent = new User(student.getEmail(), student.getCivilNumber(), student.getFatherPhone(),
+                student.getMatherPhone(), student.getLevel(), student.getName(), student.getAddress(), student.getId(), student.getType(),
+                student.getSchoolId(), student.getImageId(), clickedTravel.getTravelId(), student.getUserLocation(), false, clickedTravel.getType());
         reference = FirebaseDatabase.getInstance().getReference("TravelStudents").child(student.getId());
         reference.setValue(currentStudent).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -242,15 +240,13 @@ public class TravelsDetailsActivity extends AppCompatActivity {
                 travelStudentList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User students = snapshot.getValue(User.class);
-                    String StudentTravelId=students.getTravelId();
-                    if(StudentTravelId!=null&&StudentTravelId.equals(travel.getTravelId())&&
-                    travel.getType().equals(students.getTravelType())){
+                    String StudentTravelId = students.getTravelId();
+                    if (StudentTravelId != null && StudentTravelId.equals(travel.getTravelId()) &&
+                            travel.getType().equals(students.getTravelType())) {
                         travelStudentList.add(students);
-                    }else {
-//                        noStudentInThisTravel.setVisibility(View.VISIBLE);
                     }
                 }
-                travelStudentsAdapter  = new usersAdapter(getBaseContext(),LoadData(TravelsDetailsActivity.this, "USER_TYPE"));
+                travelStudentsAdapter = new usersAdapter(TravelsDetailsActivity.this, LoadData(TravelsDetailsActivity.this, "USER_TYPE"));
                 travelStudentsAdapter.setItems(travelStudentList);
                 travelStudentsRecycler.setAdapter(travelStudentsAdapter);
                 travelStudentsAdapter.notifyDataSetChanged();

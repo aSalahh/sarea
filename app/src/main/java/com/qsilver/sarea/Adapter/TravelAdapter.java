@@ -51,7 +51,6 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.viewHolder
     private StorageReference storageReference;
 
     public TravelAdapter(Context mContext, User currentUser) {
-        this.mTravel = mTravel;
         this.mContext = mContext;
          this.currentUser=currentUser;
     }
@@ -132,6 +131,7 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.viewHolder
                 Intent intent = new Intent(mContext, TravelsDetailsActivity.class);
                 intent.putExtra("CLICK_TRAVEL", travel);
                 intent.putExtra("CURRENT_STUDENT", currentUser);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
 
             }

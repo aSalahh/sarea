@@ -44,7 +44,7 @@
             android:src="@drawable/ic_left_arrow" />
 
     <TextView
-        android:id="@+id/setting_txt_title"
+        android:id="@+id/travel_setting_txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -210,7 +210,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/driver_name"
+                    android:id="@+id/travel_driver_name"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="2"
@@ -224,7 +224,7 @@
                     android:textSize="@dimen/_15ssp" />
 
                 <TextView
-                    android:id="@+id/driver_address"
+                    android:id="@+id/travel_driver_address"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:fontFamily="@font/ge_snd_book"
@@ -235,7 +235,7 @@
                     android:textColor="#5C617F"
                     android:textSize="@dimen/_10ssp" />
                 <TextView
-                    android:id="@+id/driver_phone"
+                    android:id="@+id/travel_driver_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:ellipsize="end"
@@ -319,7 +319,7 @@
             android:background="@drawable/bg1">
 
             <TextView
-                android:id="@+id/from"
+                android:id="@+id/travel_from"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -346,11 +346,11 @@
                 android:padding="@dimen/_4sdp"
                 android:textColor="#222533"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toStartOf="@id/from"
+                app:layout_constraintEnd_toStartOf="@id/travel_from"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/to"
+                android:id="@+id/travel_to"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -363,9 +363,9 @@
                 android:textColor="#6B6E7F"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/from" />
+                app:layout_constraintTop_toBottomOf="@id/travel_from" />
             <TextView
-                android:id="@+id/details_type"
+                android:id="@+id/travel_details_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -377,10 +377,10 @@
                 android:textColor="#fff"
                 android:background="@drawable/rounded_corner"
                 android:textSize="@dimen/_10sdp"
-                app:layout_constraintTop_toBottomOf="@id/details_days"
+                app:layout_constraintTop_toBottomOf="@id/travel_details_days"
                 app:layout_constraintStart_toStartOf="parent" />
             <TextView
-                android:id="@+id/details_days"
+                android:id="@+id/travel_details_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -405,11 +405,11 @@
                 android:padding="@dimen/_4sdp"
                 android:textColor="#222533"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toStartOf="@id/to"
+                app:layout_constraintEnd_toStartOf="@id/travel_to"
                 app:layout_constraintTop_toBottomOf="@id/travel_from_set" />
 
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/travel_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -422,7 +422,7 @@
                 android:textColor="#6B6E7F"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/to" />
+                app:layout_constraintTop_toBottomOf="@id/travel_to" />
 
             <TextView
                 android:id="@+id/travel_time_set"
@@ -436,7 +436,7 @@
                 android:padding="@dimen/_4sdp"
                 android:textColor="#222533"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toStartOf="@id/time"
+                app:layout_constraintEnd_toStartOf="@id/travel_time"
                 app:layout_constraintTop_toBottomOf="@id/travel_to_set" />
 
 
@@ -474,21 +474,6 @@
         app:layout_constraintTop_toBottomOf="@+id/travel_students"
         android:id="@+id/recyclerView_travel_students"
       />
-<!--    remove this-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/no_student_in_this_travel"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:fontFamily="@font/hacen_samra"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/travel_students"-->
-<!--        android:textSize="@dimen/_15sdp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        android:gravity="center_horizontal|center_vertical"-->
-<!--        android:text="لا يوجد طلاب تابعين لهذه الرحلة"/>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,15 +97,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         }
-        if (LoadData(MapsActivity.this, "USER_TYPE") != null &&
-                LoadData(MapsActivity.this, "USER_TYPE").equals("driver")) {
-
-            startTracking.setVisibility(View.VISIBLE);
-            endTracking.setVisibility(View.VISIBLE);
-        } else {
-            startTracking.setVisibility(View.GONE);
-            endTracking.setVisibility(View.GONE);
-        }
+//        if (LoadData(MapsActivity.this, "USER_TYPE") != null &&
+//                LoadData(MapsActivity.this, "USER_TYPE").equals("driver")) {
+//
+//            startTracking.setVisibility(View.VISIBLE);
+//            endTracking.setVisibility(View.VISIBLE);
+//        } else {
+//            startTracking.setVisibility(View.GONE);
+//            endTracking.setVisibility(View.GONE);
+//        }
 
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
