@@ -339,10 +339,11 @@ public class SinUpActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                        assert firebaseUser != null;
-                        String userId = firebaseUser.getUid();
+
                         if (task.isSuccessful()) {
+                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            assert firebaseUser != null;
+                            String userId = firebaseUser.getUid();
                             // save in users root
                             reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
                             User user = new User(email, civilNumber, name, address, userId, myUserType,
@@ -364,9 +365,9 @@ public class SinUpActivity extends AppCompatActivity {
 
                             });
                         } else {
+                            String massage=task.getException().getMessage();
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(SinUpActivity.this, "حاول لاحقاً", Toast.LENGTH_LONG).show();
-
+                            Toast.makeText(SinUpActivity.this, " حاول لاحقاً " +massage, Toast.LENGTH_LONG).show();
                         }
                     }
                 });

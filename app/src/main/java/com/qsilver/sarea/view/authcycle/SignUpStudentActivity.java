@@ -377,10 +377,13 @@ public class SignUpStudentActivity extends AppCompatActivity {
 
                                 }
 
+
+
                             });
                         } else {
+                            String massage=task.getException().getMessage();
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(SignUpStudentActivity.this, "حاول لاحقاً", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUpStudentActivity.this, " حاول لاحقاً " +massage, Toast.LENGTH_LONG).show();
 
                         }
                     }
